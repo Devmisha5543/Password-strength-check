@@ -1,7 +1,7 @@
 import re
 
 
-def evaluate_password(candidate):
+def evaluate_strength(candidate):
     strength = 0
     messages = []
 
@@ -52,17 +52,16 @@ def show_feedback(strength, verdict, messages):
 
 def run_interface():
     print("=== Password Strength Checker ===")
-    print("Type 'help' to view password rules or 'quit' to exit.")
+    print("Type 'help' to view strength rules or 'quit' to exit.")
 
     while True:
-        user_input = input("\nEnter your password (or command): ").strip()
-        command = user_input.lower()
+        user_input = input("\nEnter text (or command): ").strip()
 
-        if command in ('cancel', 'c', 'exit', 'quit'):
+        if user_input.lower() in ('cancel', 'c', 'exit', 'quit'):
             print("Cancelled.")
             break
-        if command in ("help", "h"):
-            print("\nPassword rules:")
+        if user_input.lower() in ("help", "h"):
+            print("\nStrength rules:")
             print(" 1. At least 8 characters")
             print(" 2. At least one uppercase letter")
             print(" 3. At least one lowercase letter")
@@ -70,10 +69,10 @@ def run_interface():
             print(" 5. At least one special character")
             continue
         if not user_input:
-            print("Please enter a password or a command.")
+            print("Please enter text or a command.")
             continue
 
-        strength, verdict, messages = evaluate_password(user_input)
+        strength, verdict, messages = evaluate_strength(user_input)
         show_feedback(strength, verdict, messages)
 
 
