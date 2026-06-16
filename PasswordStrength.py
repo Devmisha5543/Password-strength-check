@@ -1,31 +1,31 @@
 import re
 
 
-def evaluate_password(password):
+def evaluate_password(candidate):
     strength = 0
     messages = []
 
-    if len(password) >= 8:
+    if len(candidate) >= 8:
         strength += 1
     else:
         messages.append("Password must be at least 8 characters long.")
 
-    if re.search(r'[A-Z]', password):
+    if re.search(r'[A-Z]', candidate):
         strength += 1
     else:
         messages.append("Password must contain at least one uppercase letter.")
-    if re.search(r'[a-z]', password):
+    if re.search(r'[a-z]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain at least one lower case")
-    if re.search(r'[0-9]', password):
+        messages.append("Password must contain at least one lowercase letter.")
+    if re.search(r'[0-9]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain number")
-    if re.search(r'[!@#$%^&*(),.?\":{}|<>]', password):
+        messages.append("Password must contain at least one number.")
+    if re.search(r'[!@#$%^&*(),.?\":{}|<>]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain at least one special character")
+        messages.append("Password must contain at least one special character.")
 
     if strength == 5:
         verdict = "Strong"
@@ -37,8 +37,8 @@ def evaluate_password(password):
     return strength, verdict, messages
 
 
-def check_pas_str(password):
-    strength, verdict, messages = evaluate_password(password)
+def check_pas_str(candidate):
+    strength, verdict, messages = evaluate_password(candidate)
 
     print(f"\nPassword status: {verdict}")
 
