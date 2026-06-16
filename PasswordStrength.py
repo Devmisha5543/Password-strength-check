@@ -37,9 +37,7 @@ def evaluate_password(candidate):
     return strength, verdict, messages
 
 
-def check_pas_str(candidate):
-    strength, verdict, messages = evaluate_password(candidate)
-
+def show_feedback(strength, verdict, messages):
     print(f"\nPassword status: {verdict}")
 
     if messages:
@@ -47,10 +45,9 @@ def check_pas_str(candidate):
         for tip in messages:
             print(" -", tip)
     else:
-        print("Congratulations 🎉 you've constructed a strong password")
+        print("Congratulations 🎉 you've constructed a strong password.")
 
     print(f"Score = {strength}/5")
-    return strength, verdict, messages
 
 
 def run_interface():
@@ -76,7 +73,8 @@ def run_interface():
             print("Please enter a password or a command.")
             continue
 
-        check_pas_str(user_input)
+        strength, verdict, messages = evaluate_password(user_input)
+        show_feedback(strength, verdict, messages)
 
 
 if __name__ == "__main__":
