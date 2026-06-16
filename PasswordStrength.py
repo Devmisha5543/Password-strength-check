@@ -8,24 +8,24 @@ def evaluate_password(candidate):
     if len(candidate) >= 8:
         strength += 1
     else:
-        messages.append("Password must be at least 8 characters long.")
+        messages.append("Must be at least 8 characters long.")
 
     if re.search(r'[A-Z]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain at least one uppercase letter.")
+        messages.append("Must contain at least one uppercase letter.")
     if re.search(r'[a-z]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain at least one lowercase letter.")
+        messages.append("Must contain at least one lowercase letter.")
     if re.search(r'[0-9]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain at least one number.")
-    if re.search(r'[!@#$%^&*(),.?\":{}|<>]', candidate):
+        messages.append("Must contain at least one number.")
+    if re.search(r'[!@#$%^&*(),.?":{}|<>]', candidate):
         strength += 1
     else:
-        messages.append("Password must contain at least one special character.")
+        messages.append("Must contain at least one special character.")
 
     if strength == 5:
         verdict = "Strong"
@@ -38,7 +38,7 @@ def evaluate_password(candidate):
 
 
 def show_feedback(strength, verdict, messages):
-    print(f"\nPassword status: {verdict}")
+    print(f"\nStrength status: {verdict}")
 
     if messages:
         print("Improvement suggestions:")
