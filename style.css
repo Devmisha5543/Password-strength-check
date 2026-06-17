@@ -1,9 +1,9 @@
 body{
     font-family: Arial, sans-serif;
-    background-color:color-mix(in hsl shorter hue, color percentage, color percentage)
+    background-color: #f4f7fb;
     margin: 0;
     padding: 40px 16px;
-    color: #333;
+    color: #000000;
 }
 
 .slot{
@@ -34,25 +34,41 @@ input{
     border-radius: 10px #cbd5e1;
     margin-bottom: 12px ;
    }
-   button{
+button{
     border: none;
     border-radius: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
    }   
-   .primary{
+.primary{
     background-color: #007bff;
-    color: white;
+    color: rgb(178, 34, 34); 
    }
-   .secondary{
+.secondary{
     background-color: #6c757d;
     color: white;
    }
-   .status{
+.status{
     margin-top: 20px;
     font-size: 18px;
     font-weight: bold;
    }
+.weak{ background: #ffffff; color: #991b1b; }
+.moderate{ background: #ffffff; color: #e8eb05; }
+.strong{ background: #d1fae5; color: #25b808; }
 
-   
+ul{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.hidden{
+    display: none;
+}   
+
+.hint{
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 5px;
+}

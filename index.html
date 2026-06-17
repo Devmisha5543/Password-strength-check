@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="slot">
+        <h1>Password Strength Checker</h1>
+         <form id="Passwordform">
+            <label for="passwordInput">Enter passwoed:</label>
+            <input id="PasswordInput" type="password" placeholder="Type ur password here">
+             <div class="buttons">
+                <button class="primary" type="submit">check</button>
+                <button class="secondary" type="button" id="retryBtn">Retry</button>
+                <button class="secondary" type="button" id="cancelBtn">cancel</button>
+
+             </div>
+         </form>
+         <div id="result" class="hidden">
+            <div id="result" class="hidden">
+                <div id="statusBox" class="status"></div>
+                <p id="Scoretest"></p>
+                <div>
+                    <strong>Suggestions</strong>
+                    <ul id="Suggestionlist"></ul>
+                </div>
+                </div>
+             </div>
+            </div>
+         </div>
+
+    </div>
 </body>
 </html>
 
-<link rel="stylesheet" href="style.css">
 
 
-<h1>Password Strength Checker</h1>
+
+
 <button id="checkPasswordBtn">Check Password Strength</button>
 <input type="password" id="passwordInput" placeholder="Enter your password">
 <div id="strengthResult"></div>
